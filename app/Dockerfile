@@ -1,14 +1,5 @@
-FROM node:18-alpine
-
-RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
+FROM node:14.17.0-slim
 
 WORKDIR /home/node/app
 
-COPY package*.json ./
-RUN npm install
-
-COPY --chown=node:node . . 
-
-EXPOSE 3000
-
-CMD ["node", "app.mjs"]
+CMD ["tail", "-f", "/dev/null"]
