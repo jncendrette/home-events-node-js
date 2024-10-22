@@ -1,11 +1,8 @@
-version: "3.8"
-
 services:
 
   db:
     build:
       context: ./db
-      dockerfile: Dockerfile
     container_name: database-mongo
     ports:
       - "27017:27017"
@@ -15,7 +12,6 @@ services:
   backend:
     build:
       context: ./backend
-      dockerfile: Dockerfile
     container_name: backend
     ports:
       - "3000:3000"
